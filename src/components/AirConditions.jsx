@@ -17,13 +17,7 @@ const AirConditions = ({ realFeel, wind, windDirection, rainChance, humidity, uv
         }`}>
           Air Conditions
         </h3>
-        <button className={`text-sm px-4 py-2 rounded-lg transition ${
-          isDarkMode 
-            ? 'bg-blue-600 hover:bg-blue-500 text-white' 
-            : 'bg-blue-100 hover:bg-blue-200 text-blue-700'
-        }`}>
-          See more
-        </button>
+       
       </div>
 
       {/* Grid Layout */}
