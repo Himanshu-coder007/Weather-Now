@@ -1,12 +1,15 @@
-# React + Vite
+# WeatherCast 🌦️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+WeatherCast is a simple and intuitive weather application that allows users to view weather forecasts by entering a **city name**. Instantly check current conditions, hourly updates, and 7-day forecasts for any location around the world.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- 🌡️ **Current Weather:** See the temperature, real feel, humidity, wind speed, and weather conditions.  
+- ⏰ **Hourly Forecast:** Track weather changes hour by hour.  
+- 📅 **7-Day Forecast:** Plan ahead with daily high/low temperatures and weather conditions.  
+- 🏙️ **City-Based Search:** Simply enter a city name to get the weather for that location.  
+- ⚡ **Clean Interface:** Easy-to-read layout and interactive experience.  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
