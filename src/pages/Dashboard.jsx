@@ -155,7 +155,7 @@ const Dashboard = () => {
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-bold">Weather Dashboard</h1>
+          <h1 className="text-2xl font-bold">Weather Now</h1>
           <ThemeToggle />
         </div>
 
