@@ -18,8 +18,8 @@ const Dashboard = () => {
     setLoading(true);
     setError(null);
 
-    try {
-      // First, get coordinates for the city using Open-Meteo's geocoding API
+    try {   
+      //  getting coordinates for the city using Open-Meteo's geocoding API
       const geocodingResponse = await fetch(
         `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(
           city
@@ -33,7 +33,7 @@ const Dashboard = () => {
 
       const { latitude, longitude, name, country } = geocodingData.results[0];
 
-      // Fetch weather data from Open-Meteo API
+      // Fetching weather data from Open-Meteo API
       const weatherResponse = await fetch(
         `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation_probability,weather_code,wind_speed_10m,wind_direction_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,precipitation_sum,precipitation_probability_max&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,weather_code,wind_speed_10m&timezone=auto&forecast_days=7`
       );
@@ -60,11 +60,11 @@ const Dashboard = () => {
   const processWeatherData = (apiData, city, country) => {
     const { current, hourly, daily } = apiData;
 
-    // Get current time index for hourly forecasts
+    // Getting current time index for hourly forecasts
     const now = new Date();
     const currentHour = now.getHours();
 
-    // Create today's forecast (next 24 hours)
+    // Creating today's forecast (next 24 hours)
     const todayForecast = [];
     for (let i = 0; i < 24; i += 3) {
       const hourIndex = currentHour + i;
@@ -77,7 +77,7 @@ const Dashboard = () => {
       }
     }
 
-    // Create 7-day forecast
+    // Creating 7-day forecast
     const weeklyForecast = [];
     for (let i = 0; i < 7; i++) {
       weeklyForecast.push({
