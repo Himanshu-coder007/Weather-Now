@@ -98,7 +98,6 @@ const Dashboard = () => {
       humidity: current.relative_humidity_2m,
       windSpeed: current.wind_speed_10m,
       windDirection: getWindDirection(current.wind_direction_10m),
-      uvIndex: 0, // Not available in basic API
       rainChance: hourly.precipitation_probability[currentHour] || 0,
       forecast: todayForecast,
       weeklyForecast,
