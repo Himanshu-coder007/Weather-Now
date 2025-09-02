@@ -46,7 +46,7 @@ const Dashboard = () => {
         );
       }
 
-      // Process the API data to match our component structure
+     
       const processedData = processWeatherData(weatherApiData, name, country);
       setWeatherData(processedData);
     } catch (err) {
@@ -182,13 +182,16 @@ const Dashboard = () => {
           <div className="flex flex-col lg:flex-row gap-6 mt-6">
             {/* Left Column */}
             <div className="flex flex-col gap-6 w-full lg:w-2/3">
+            {/* Weather card */}
               <WeatherCard
                 city={weatherData.city}
                 temperature={weatherData.temperature}
                 condition={weatherData.condition}
                 rainChance={weatherData.rainChance}
               />
+              {/* Todays hourly Forecast */}
               <TodayForecast forecast={weatherData.forecast} />
+              {/* Air Condition */}
               <AirConditions
                 realFeel={weatherData.realFeel}
                 wind={weatherData.windSpeed}
