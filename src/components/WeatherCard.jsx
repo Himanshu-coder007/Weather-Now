@@ -1,6 +1,6 @@
 // src/components/WeatherCard.jsx
 import React from 'react';
-import { Sun, Cloud, CloudRain, CloudDrizzle, Snowflake } from 'lucide-react';
+import { Sun, Cloud, CloudRain, CloudDrizzle, Snowflake, CloudFog } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 
 const WeatherCard = ({ city, temperature, condition, rainChance }) => {
@@ -9,11 +9,13 @@ const WeatherCard = ({ city, temperature, condition, rainChance }) => {
   // Choose an icon based on condition
   const getIcon = () => {
     const cond = condition.toLowerCase();
-    if (cond.includes('sun')) return <Sun className="w-24 h-24 text-yellow-400" />;
+    if (cond.includes('clear')) return <Sun className="w-24 h-24 text-yellow-400" />;
     if (cond.includes('cloud')) return <Cloud className="w-24 h-24 text-gray-300" />;
-    if (cond.includes('rain')) return <CloudRain className="w-24 h-24 text-blue-400" />;
+    if (cond.includes('rain') || cond.includes('shower')) return <CloudRain className="w-24 h-24 text-blue-400" />;
     if (cond.includes('drizzle')) return <CloudDrizzle className="w-24 h-24 text-blue-300" />;
     if (cond.includes('snow')) return <Snowflake className="w-24 h-24 text-blue-100" />;
+    if (cond.includes('fog')) return <CloudFog className="w-24 h-24 text-gray-400" />;
+    if (cond.includes('thunder')) return <CloudRain className="w-24 h-24 text-purple-500" />;
     return <Sun className="w-24 h-24 text-yellow-400" />;
   };
 

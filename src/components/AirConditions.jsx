@@ -3,7 +3,7 @@ import React from 'react';
 import { Droplets, Wind, Sun, Thermometer } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 
-const AirConditions = ({ realFeel, wind, rainChance, uvIndex }) => {
+const AirConditions = ({ realFeel, wind, windDirection, rainChance, humidity, uvIndex }) => {
   const { isDarkMode } = useTheme();
 
   return (
@@ -62,7 +62,7 @@ const AirConditions = ({ realFeel, wind, rainChance, uvIndex }) => {
             }`}>Wind</p>
             <p className={`text-xl font-semibold ${
               isDarkMode ? 'text-white' : 'text-gray-800'
-            }`}>{wind} km/h</p>
+            }`}>{wind} km/h {windDirection}</p>
           </div>
         </div>
 
@@ -85,22 +85,22 @@ const AirConditions = ({ realFeel, wind, rainChance, uvIndex }) => {
           </div>
         </div>
 
-        {/* UV Index */}
+        {/* Humidity */}
         <div className={`flex items-center gap-4 p-4 rounded-xl ${
           isDarkMode ? 'bg-gray-700' : 'bg-gray-100'
         }`}>
           <div className={`p-3 rounded-lg ${
             isDarkMode ? 'bg-gray-600' : 'bg-gray-200'
           }`}>
-            <Sun className="w-6 h-6 text-blue-400" />
+            <Droplets className="w-6 h-6 text-blue-400" />
           </div>
           <div>
             <p className={`text-sm ${
               isDarkMode ? 'text-gray-400' : 'text-gray-500'
-            }`}>UV Index</p>
+            }`}>Humidity</p>
             <p className={`text-xl font-semibold ${
               isDarkMode ? 'text-white' : 'text-gray-800'
-            }`}>{uvIndex}</p>
+            }`}>{humidity}%</p>
           </div>
         </div>
       </div>
